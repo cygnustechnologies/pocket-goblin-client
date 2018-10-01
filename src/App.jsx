@@ -1,6 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Container from "./components/Container";
+class App extends React.Component {
+  render() {
+    return (
+      <div id="main">
+        <Container />
+      </div>
+    );
+  }
+}
 
-class App extends React.Component {}
-
-ReactDOM.render(App, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
