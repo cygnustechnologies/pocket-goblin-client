@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Container from "./components/Container";
-import FinancialSnapShot from "./components/FinancialSnapShot";
+
+import DashBoardContainer from "./components/DashBoardContainer/DashBoardContainer";
+import FinancialSnapShotContainer from "./components/FinancialSnapShotContainer/FinancialSnapShotContainer";
 
 class App extends React.Component {
   render() {
     return (
       <div id="main">
-        <FinancialSnapShot />
+        <DashBoardContainer />
       </div>
     );
   }
