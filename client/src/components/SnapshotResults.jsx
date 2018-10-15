@@ -106,10 +106,11 @@ class SnapshotResults extends React.Component {
     };
 
     return (
-      <Wrapper>
+      <Wrapper data-test="snapshot-results">
         <h1>Tap to Modify</h1>
         <Hr width="50%" />
         <InputAmount
+          data-test="input-amount"
           handlePurchaseInput={handlePurchaseInput}
           purchaseAmount={purchaseAmount}
         />
@@ -118,12 +119,14 @@ class SnapshotResults extends React.Component {
         <div style={{ margin: "0" }}>
           <h3>Cash Flow</h3>
           <CashFlowMeter
+            data-test="cash-flow-meter"
             currentCashFlowAmount={currentCashFlowAmount}
             purchaseAmount={purchaseAmount}
           />
         </div>
         <div style={{ margin: "10px 0" }}>
           <HorizontalBar
+            data-test="horizontal-bar"
             data={DebtSavingGraph}
             options={DebtSavingGraphOptions}
             style={{ width: "60%", height: "100%" }}
@@ -134,6 +137,7 @@ class SnapshotResults extends React.Component {
           <div>
             {purchasePaymentType === "credit" ? (
               <RealCostOfCredit
+                data-type="real-cost-of-credit"
                 purchaseFrequency={purchaseFrequency}
                 purchaseAmount={purchaseAmount}
               />
@@ -155,6 +159,7 @@ class SnapshotResults extends React.Component {
               </button>
 
               <PayDebtOrInvestIt
+                data-test="pay-debt-or-investIt"
                 debtFreeFasterBy={this.state.debtFreeFasterBy}
                 interestSavedAmount={this.state.interestSavedAmount}
                 totalSavedAmount={this.state.totalSavedAmount}
