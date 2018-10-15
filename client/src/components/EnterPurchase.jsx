@@ -29,15 +29,17 @@ class EnterPurchase extends React.Component {
     } = this.props;
 
     return (
-      <Wrapper>
-        <h1>Purchase Amount</h1>
+      <Wrapper data-test="enter-purchase">
+        <h1>Enter potential purchase</h1>
         <InputAmount
+          data-test="input-amount"
           handlePurchaseInput={handlePurchaseInput}
           purchaseAmount={purchaseAmount}
         />
         <div>
           <h2>Cash Flow</h2>
           <CashFlowMeter
+            data-test="cash-flow-meter"
             currentCashFlowAmount={currentCashFlowAmount}
             purchaseAmount={purchaseAmount}
           />

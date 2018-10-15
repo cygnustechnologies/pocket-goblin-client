@@ -53,7 +53,7 @@ const RouterComponent = props => {
 
   return (
     <Router history={history}>
-      <Wrapper className="routes-component">
+      <Wrapper className="routes-component" data-test="router-component">
         <Route path="/" render={props => <App auth={auth} {...props} />} />
         <Route path="/home" render={props => <Home auth={auth} {...props} />} />
         <Route

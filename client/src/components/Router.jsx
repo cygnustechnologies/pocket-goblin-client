@@ -72,6 +72,7 @@ class RouterContainer extends React.Component {
 
     return (
       <RouterComponent
+        data-test="Router"
         handlePurchaseInput={handlePurchaseInput}
         handlePurchaseFrequencyChange={handlePurchaseFrequencyChange}
         handlePaymentTypeChange={handlePaymentTypeChange}
