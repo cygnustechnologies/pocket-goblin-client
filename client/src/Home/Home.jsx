@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import LinkItems from "../components/LinkItems.jsx";
 import styled from "react-emotion";
+import LinkItems from "../components/LinkItems.jsx";
 
 const Wrapper = styled("div")`
   display: flex;
@@ -18,7 +18,7 @@ class Home extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
     return (
-      <div className="container">
+      <Wrapper className="container">
         {isAuthenticated() && (
           <Wrapper>
             <LinkItems />
@@ -36,7 +36,7 @@ class Home extends Component {
             to continue.
           </h4>
         )}
-      </div>
+      </Wrapper>
     );
   }
 }
