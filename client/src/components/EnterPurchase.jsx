@@ -47,6 +47,11 @@ const PayInCashSpacing = styled("input")`
   margin-left: 30px;
 `;
 
+const HorizontalLine = styled("hr")`
+  border: 2px solid rgba(178, 181, 186, 0.3);
+  width: 70%;
+`;
+
 class EnterPurchase extends React.Component {
   constructor(props) {
     super(props);
@@ -65,7 +70,9 @@ class EnterPurchase extends React.Component {
 
     return (
       <Wrapper data-test="enter-purchase">
+        <HorizontalLine />
         <h1>Purchase Amount</h1>
+        <HorizontalLine />
         <InputAmount
           data-test="input-amount"
           handlePurchaseInput={handlePurchaseInput}
@@ -79,6 +86,7 @@ class EnterPurchase extends React.Component {
             purchaseAmount={purchaseAmount}
           />
         </CashFlowMeterDiv>
+        <HorizontalLine />
         <RepeatPurchaseFrequencySelecterDiv>
           Repeat:
           <RepeatPurchaseFrequencySelecterOption
@@ -90,7 +98,7 @@ class EnterPurchase extends React.Component {
             <option value="monthly">Monthly</option>
           </RepeatPurchaseFrequencySelecterOption>
         </RepeatPurchaseFrequencySelecterDiv>
-
+        <HorizontalLine />
         <CashCreditOption>
           <input
             name="paymentType"
@@ -109,6 +117,7 @@ class EnterPurchase extends React.Component {
           />
           Pay with Credit
         </CashCreditOption>
+        <HorizontalLine />
         <Link to="/snapshot-results">
           <StartTheGoblin>Start the Goblin!</StartTheGoblin>
         </Link>

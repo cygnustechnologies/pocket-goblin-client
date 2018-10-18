@@ -11,6 +11,21 @@ const Wrapper = styled("div")`
   text-align: center;
 `;
 
+const StartTheGoblin = styled("button")`
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  width: 175px;
+  height: 50px;
+  padding: 2px;
+`;
+
+const HorizontalLine = styled("hr")`
+  border: 2px solid rgba(178, 181, 186, 0.3);
+  width: 75%;
+`;
+
 class TopSpending extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +50,9 @@ class TopSpending extends React.Component {
 
     return (
       <Wrapper data-test="top-spending">
+        <HorizontalLine />
         <h1>Spending Breakdown</h1>
+        <HorizontalLine />
         <TopSpendingGraphs
           data-test="top-spending-graphs"
           recurring={recurring}
@@ -43,7 +60,7 @@ class TopSpending extends React.Component {
           shop={shop}
         />
         <Link to="/enter-purchase">
-          <button>Start the Goblin without selection</button>
+          <StartTheGoblin>Start the Goblin without selection</StartTheGoblin>
         </Link>
       </Wrapper>
     );
