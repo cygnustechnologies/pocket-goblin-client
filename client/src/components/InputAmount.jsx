@@ -17,7 +17,7 @@ const PurchaseAmountText = styled("label")`
   color: red;
 `;
 
-const RedDollorSigh = styled("p")`
+const DollarSign = styled("p")`
   color: red;
 `;
 
