@@ -10,7 +10,6 @@
     "format:check": "prettier --list-different \"src/**/*.{js,jsx,css,json}\"",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
     "build": "parcel build src/index.html --no-source-maps ",
-    "server-dev": "nodemon server/index.js",
     "test": "jest --watch",
     "test:update": "jest -u"
   },
