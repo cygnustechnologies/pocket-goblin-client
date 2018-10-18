@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import goblin from "../images/goblin.png";
 import styled from "react-emotion";
 
 //Styled Components
@@ -11,7 +10,7 @@ const Wrapper = styled("div")`
 `;
 
 const PWrapper = styled("p")`
-  width: 45%;
+  width: 75%;
 `;
 
 class GoblinAdvice extends React.Component {
@@ -21,8 +20,8 @@ class GoblinAdvice extends React.Component {
 
   render() {
     return (
-      <Wrapper>
-        <img src={goblin} alt="goblinPicture" height="150" />
+      <Wrapper data-test="goblin-advice">
+        <img src="../images/goblin.png" alt="goblinPicture" height="150" />
         <h2>Careful! Think twice about making this purchase</h2>
         <PWrapper>
           Your cash flow is tight and your Debt to saving is right on the edge.

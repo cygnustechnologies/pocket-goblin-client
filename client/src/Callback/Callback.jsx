@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import goblin from "../images/goblin.png";
+// import goblin from "../images/goblin.png";
 
 class Callback extends Component {
   render() {
@@ -18,7 +18,7 @@ class Callback extends Component {
 
     return (
       <div style={style}>
-        <img src={goblin} alt="loading" />
+        <img src="../images/goblin.png" alt="loading" />
       </div>
     );
   }

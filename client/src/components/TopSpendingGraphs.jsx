@@ -7,6 +7,11 @@ const Titles = styled("h1")`
   text-align: center;
 `;
 
+const GraphWrapper = styled("div")`
+  height: 75%;
+  width: 75%;
+`;
+
 const TopSpendingGraphs = ({ recurring, categories, shop }) => {
   const barGraphColors = [
     "rgb(146, 66, 244)",
@@ -64,12 +69,16 @@ const TopSpendingGraphs = ({ recurring, categories, shop }) => {
   };
 
   return (
-    <div style={{ height: "50%", width: "50%" }}>
+    <GraphWrapper data-test="top-spending-graphs">
       <Titles>Top Recurring </Titles>
       <select>
         <option value="monthly">Monthly</option>
       </select>
-      <HorizontalBar data={recurringGraph} options={options} />
+      <HorizontalBar
+        data={recurringGraph}
+        options={options}
+        data-type="horizontal-bars"
+      />
       <p>
         Recurring expenses add up! Click on one to analyze how reducting it
         would help imporve your financial health.
@@ -78,7 +87,11 @@ const TopSpendingGraphs = ({ recurring, categories, shop }) => {
       <select>
         <option value="monthly">Monthly</option>
       </select>
-      <HorizontalBar data={categoriesGraph} options={options} />
+      <HorizontalBar
+        data={categoriesGraph}
+        options={options}
+        data-type="horizontal-bars"
+      />
       <p>
         Category spending shows you genral trends. Most people can save tons of
         money be reducing the amount of money they spend at bars and
@@ -88,14 +101,18 @@ const TopSpendingGraphs = ({ recurring, categories, shop }) => {
       <select>
         <option value="monthly">Monthly</option>
       </select>
-      <HorizontalBar data={shopGraph} options={options} />
+      <HorizontalBar
+        data={shopGraph}
+        options={options}
+        data-type="horizontal-bars"
+      />
       <p>
         {`Watch out! That daily latte or impulsive Amazon purchase adds up! If you
         used that money to pay down debt or top up savings, you will be in far
         better shape! And let's be honest, I'll bet you wouldnt miss that shiny
         new gadget after a few months.`}
       </p>
-    </div>
+    </GraphWrapper>
   );
 };
 

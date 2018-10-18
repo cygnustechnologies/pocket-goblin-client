@@ -34,9 +34,10 @@ class TopSpending extends React.Component {
     const { recurring, categories, shop } = this.state;
 
     return (
-      <Wrapper>
+      <Wrapper data-test="top-spending">
         <h1>Spending Breakdown</h1>
         <TopSpendingGraphs
+          data-test="top-spending-graphs"
           recurring={recurring}
           categories={categories}
           shop={shop}

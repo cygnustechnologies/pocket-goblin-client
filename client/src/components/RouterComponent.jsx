@@ -27,7 +27,7 @@ const Wrapper = styled("div")`
   display: grid;
   justify-content: center;
   margin-top: 2rem;
-  grid-template-columns: 400px;
+  grid-template-columns: 650px;
 `;
 
 const auth = new Auth();
@@ -53,7 +53,7 @@ const RouterComponent = props => {
 
   return (
     <Router history={history}>
-      <Wrapper className="routes-component">
+      <Wrapper className="routes-component" data-test="router-component">
         <Route path="/" render={props => <App auth={auth} {...props} />} />
         <Route path="/home" render={props => <Home auth={auth} {...props} />} />
         <Route

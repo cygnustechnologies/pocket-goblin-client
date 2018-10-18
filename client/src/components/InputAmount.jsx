@@ -13,6 +13,14 @@ const Input = styled("input")`
   width: 55%;
 `;
 
+const PurchaseAmountText = styled("label")`
+  color: red;
+`;
+
+const RedDollorSigh = styled("p")`
+  color: red;
+`;
+
 class InputAmount extends React.Component {
   constructor(props) {
     super(props);
@@ -45,13 +53,13 @@ class InputAmount extends React.Component {
     const { isEditting } = this.state;
     if (isEditting === false) {
       return (
-        <label onClick={this.changeLabelToInput}>
+        <PurchaseAmountText onClick={this.changeLabelToInput}>
           ${this.props.purchaseAmount}
-        </label>
+        </PurchaseAmountText>
       );
     } else {
       return (
-        <p>
+        <RedDollorSigh>
           $
           <Input
             onChange={this.props.handlePurchaseInput}
@@ -62,7 +70,7 @@ class InputAmount extends React.Component {
             /* eslint-disable-next-line */
             autoFocus
           />
-        </p>
+        </RedDollorSigh>
       );
     }
   }
