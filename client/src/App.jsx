@@ -5,7 +5,11 @@ const Wrapper = styled("div")`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+
+  > * {
+    margin: 0 30px;
+  }
 `;
 
 class App extends Component {
