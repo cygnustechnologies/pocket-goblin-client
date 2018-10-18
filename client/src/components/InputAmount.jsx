@@ -45,7 +45,7 @@ class InputAmount extends React.Component {
     const { isEditting } = this.state;
     if (isEditting === false) {
       return (
-        <label onClick={this.changeLabelToInput}>
+        <label style={{ color: "red" }} onClick={this.changeLabelToInput}>
           ${this.props.purchaseAmount}
         </label>
       );
