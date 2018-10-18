@@ -70,7 +70,7 @@ class InputAmount extends React.Component {
             /* eslint-disable-next-line */
             autoFocus
           />
-        </RedDollorSigh>
+        </DollarSign>
       );
     }
   }
