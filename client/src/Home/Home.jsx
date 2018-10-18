@@ -10,6 +10,10 @@ const Wrapper = styled("div")`
   text-align: center;
 `;
 
+const CursorPointer = styled("a")`
+  cursor: pointer;
+`;
+
 class Home extends Component {
   login() {
     this.props.auth.login();
@@ -20,19 +24,19 @@ class Home extends Component {
     return (
       <Wrapper className="container">
         {isAuthenticated() && (
-          <Wrapper>
+          <div>
             <LinkItems />
             <Link to="/enter-purchase">
               <button>Enter a Purchase</button>
             </Link>
-          </Wrapper>
+          </div>
         )}
         {!isAuthenticated() && (
           <h4>
             You are not logged in! Please{" "}
-            <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
+            <CursorPointer onClick={this.login.bind(this)}>
               Log In
-            </a>{" "}
+            </CursorPointer>{" "}
             to continue.
           </h4>
         )}

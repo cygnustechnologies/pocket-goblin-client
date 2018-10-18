@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import goblin from "../images/goblin.png";
 import styled from "react-emotion";
 
 //Styled Components
@@ -11,7 +10,7 @@ const Wrapper = styled("div")`
 `;
 
 const PWrapper = styled("p")`
-  width: 45%;
+  width: 75%;
 `;
 
 class GoblinAdvice extends React.Component {

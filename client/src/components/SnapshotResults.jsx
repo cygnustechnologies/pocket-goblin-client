@@ -114,7 +114,7 @@ class SnapshotResults extends React.Component {
             purchaseAmount={purchaseAmount}
           />
         </div>
-        <div style={{ width: "30%", height: "30%" }}>
+        <div>
           <HorizontalBar
             data-test="horizontal-bar"
             data={DebtSavingGraph}

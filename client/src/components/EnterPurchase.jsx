@@ -43,6 +43,10 @@ const CashFlowMeterDiv = styled("div")`
   flex-direction: row;
 `;
 
+const PayInCashSpacing = styled("input")`
+  margin-left: 30px;
+`;
+
 class EnterPurchase extends React.Component {
   constructor(props) {
     super(props);
@@ -61,7 +65,7 @@ class EnterPurchase extends React.Component {
 
     return (
       <Wrapper data-test="enter-purchase">
-        <h1>Enter potential purchase</h1>
+        <h1>Purchase Amount</h1>
         <InputAmount
           data-test="input-amount"
           handlePurchaseInput={handlePurchaseInput}
@@ -96,8 +100,7 @@ class EnterPurchase extends React.Component {
             onChange={handlePaymentTypeChange}
           />
           Pay in Cash
-          <input
-            style={{ marginLeft: "30px" }}
+          <PayInCashSpacing
             name="paymentType"
             type="radio"
             value="credit"
