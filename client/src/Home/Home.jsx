@@ -29,7 +29,7 @@ class Home extends Component {
             <Link to="/enter-purchase">
               <button>Enter a Purchase</button>
             </Link>
-          </div>
+          </Wrapper>
         )}
         {!isAuthenticated() && (
           <h4>
