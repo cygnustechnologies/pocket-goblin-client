@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import goblin from "../images/goblin.png";
 
 class Callback extends Component {
   render() {

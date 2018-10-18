@@ -17,7 +17,7 @@ const PurchaseAmountText = styled("label")`
   color: red;
 `;
 
-const RedDollorSigh = styled("p")`
+const DollorSigh = styled("p")`
   color: red;
 `;
 
@@ -59,7 +59,7 @@ class InputAmount extends React.Component {
       );
     } else {
       return (
-        <RedDollorSigh>
+        <DollorSigh>
           $
           <Input
             onChange={this.props.handlePurchaseInput}
@@ -70,7 +70,7 @@ class InputAmount extends React.Component {
             /* eslint-disable-next-line */
             autoFocus
           />
-        </RedDollorSigh>
+        </DollorSigh>
       );
     }
   }

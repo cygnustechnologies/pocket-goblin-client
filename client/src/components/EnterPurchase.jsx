@@ -43,7 +43,7 @@ const CashFlowMeterDiv = styled("div")`
   flex-direction: row;
 `;
 
-const PayInCashSpacing = styled("input")`
+const PayInCash = styled("input")`
   margin-left: 30px;
 `;
 
@@ -108,7 +108,7 @@ class EnterPurchase extends React.Component {
             onChange={handlePaymentTypeChange}
           />
           Pay in Cash
-          <PayInCashSpacing
+          <PayInCash
             name="paymentType"
             type="radio"
             value="credit"
