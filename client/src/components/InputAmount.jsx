@@ -59,7 +59,7 @@ class InputAmount extends React.Component {
       );
     } else {
       return (
-        <RedDollorSigh>
+        <DollarSign>
           $
           <Input
             onChange={this.props.handlePurchaseInput}
