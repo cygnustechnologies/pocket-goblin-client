@@ -105,14 +105,14 @@ class SnapshotResults extends React.Component {
           purchaseAmount={purchaseAmount}
         />
         <h2>What if you spend the money...</h2>
-        <div>
+        <div style={{ margin: "0" }}>
           <h3>Cash Flow</h3>
           <CashFlowMeter
             currentCashFlowAmount={currentCashFlowAmount}
             purchaseAmount={purchaseAmount}
           />
         </div>
-        <div>
+        <div style={{ margin: "10px 0" }}>
           <HorizontalBar
             data={DebtSavingGraph}
             options={DebtSavingGraphOptions}
