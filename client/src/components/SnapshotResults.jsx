@@ -17,7 +17,7 @@ const Wrapper = styled("div")`
 
 const WhatIfContainer = styled("div")`
   display: flex;
-  width: 40%;
+  width: 60%;
   flex-direction: column;
 `;
 
@@ -112,10 +112,11 @@ class SnapshotResults extends React.Component {
             purchaseAmount={purchaseAmount}
           />
         </div>
-        <div style={{ width: "30%", height: "30%" }}>
+        <div>
           <HorizontalBar
             data={DebtSavingGraph}
             options={DebtSavingGraphOptions}
+            style={{ width: "60%", height: "100%" }}
           />
         </div>
         <WhatIfContainer>
