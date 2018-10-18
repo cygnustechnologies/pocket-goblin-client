@@ -100,7 +100,7 @@ class EnterPurchase extends React.Component {
             onChange={handlePaymentTypeChange}
           />
           Pay in Cash
-          <PayInCashSpacing
+          <PayInCash
             name="paymentType"
             type="radio"
             value="credit"
