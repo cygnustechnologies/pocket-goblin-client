@@ -24,7 +24,7 @@ class Home extends Component {
     return (
       <div className="container">
         {isAuthenticated() && (
-          <div>
+          <Wrapper>
             <LinkItems />
             <Link to="/enter-purchase">
               <button>Enter a Purchase</button>
