@@ -10,8 +10,8 @@ class RouterContainer extends React.Component {
       purchaseAmount: 0,
       purchaseFrequency: "never",
       purchasePaymentType: "credit",
-      totalDebtAmount: 0,
-      totalSavingAmount: 0
+      totalDebtAmount: 1500,
+      totalSavingAmount: 3000
     };
     this.handlePurchaseInput = this.handlePurchaseInput.bind(this);
     this.handlePurchaseFrequencyChange = this.handlePurchaseFrequencyChange.bind(

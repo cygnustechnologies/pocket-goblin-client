@@ -7,6 +7,11 @@ const Titles = styled("h1")`
   text-align: center;
 `;
 
+const GraphWrapper = styled("div")`
+  height: 75%;
+  width: 75%;
+`;
+
 const TopSpendingGraphs = ({ recurring, categories, shop }) => {
   const barGraphColors = [
     "rgb(146, 66, 244)",
@@ -64,10 +69,7 @@ const TopSpendingGraphs = ({ recurring, categories, shop }) => {
   };
 
   return (
-    <div
-      style={{ height: "50%", width: "50%" }}
-      data-test="top-spending-graphs"
-    >
+    <GraphWrapper data-test="top-spending-graphs">
       <Titles>Top Recurring </Titles>
       <select>
         <option value="monthly">Monthly</option>
@@ -110,7 +112,7 @@ const TopSpendingGraphs = ({ recurring, categories, shop }) => {
         better shape! And let's be honest, I'll bet you wouldnt miss that shiny
         new gadget after a few months.`}
       </p>
-    </div>
+    </GraphWrapper>
   );
 };
 

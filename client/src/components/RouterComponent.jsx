@@ -27,6 +27,7 @@ const Wrapper = styled("div")`
   display: grid;
   justify-content: center;
   margin-top: 2rem;
+  grid-template-columns: 650px;
 `;
 
 const auth = new Auth();
