@@ -17,8 +17,16 @@ const Wrapper = styled("div")`
 
 const WhatIfContainer = styled("div")`
   display: flex;
-  width: 60%;
   flex-direction: column;
+  width: 90%;
+  @media (min-width: 750px) {
+    width: 60%;
+  }
+`;
+
+const Hr = styled("hr")`
+  border: 1px solid rgba(128, 128, 128, 0.1);
+  width: ${props => (props.width ? props.width : "100%")};
 `;
 
 class SnapshotResults extends React.Component {
@@ -100,10 +108,12 @@ class SnapshotResults extends React.Component {
     return (
       <Wrapper>
         <h1>Tap to Modify</h1>
+        <Hr width="50%" />
         <InputAmount
           handlePurchaseInput={handlePurchaseInput}
           purchaseAmount={purchaseAmount}
         />
+        <Hr width="50%" />
         <h2>What if you spend the money...</h2>
         <div style={{ margin: "0" }}>
           <h3>Cash Flow</h3>
@@ -119,6 +129,7 @@ class SnapshotResults extends React.Component {
             style={{ width: "60%", height: "100%" }}
           />
         </div>
+        <Hr width="50%" />
         <WhatIfContainer>
           <div>
             {purchasePaymentType === "credit" ? (
@@ -127,6 +138,7 @@ class SnapshotResults extends React.Component {
                 purchaseAmount={purchaseAmount}
               />
             ) : null}
+            <Hr />
             <div style={{ textAlign: "center" }}>
               <h2>Or, what if you instead...</h2>
               <button
