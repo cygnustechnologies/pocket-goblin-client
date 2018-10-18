@@ -6,7 +6,7 @@ class RealCostOfCredit extends React.Component {
 
     this.state = {
       monthsToPayOff: 6,
-      APR: 0.235
+      APR: 0.1671
     };
   }
 
