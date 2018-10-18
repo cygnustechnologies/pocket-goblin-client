@@ -22,7 +22,7 @@ class Home extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
     return (
-      <Wrapper className="container">
+      <div className="container">
         {isAuthenticated() && (
           <div>
             <LinkItems />
