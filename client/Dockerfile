@@ -1,5 +1,5 @@
 #build the frontend client as Build Step 0
-FROM tiangolo/node-frontend:10 AS build-stage
+FROM deduced/node-frontend:1.0 AS build-stage
 
 ENV NPM_CONFIG_LOGLEVEL warn
 
@@ -21,5 +21,5 @@ FROM nginx:1.15-alpine
 
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
-# Copy the default nginx.conf provided by tiangolo/node-frontend
+# Copy the default nginx.conf provided by deduced/node-frontend
 COPY --from=build-stage /nginx.conf /etc/nginx/conf.d/default.conf
