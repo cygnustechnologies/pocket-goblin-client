@@ -13,4 +13,4 @@ COPY . .
 
 LABEL maintainer="Carlos Astrada <carlosastrada@gmail.com>"
 
-CMD node server.js
+CMD node index.js
