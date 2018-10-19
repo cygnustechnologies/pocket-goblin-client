@@ -10,14 +10,14 @@ if (result.error) {
 }
 
 //FIXME:Move these things into environmental variables
-const dbName = process.env.DATABASE_NAME || "pocketgoblin";
-const dbUser = process.env.DATABASE_USER || "postgres";
-const dbPassword = process.env.DATABASE_PASSWORD || "";
-const dbHost = process.env.DATABASE_HOST || "localhost";
+const dbName = process.env.POSTGRES_DB || "pocketgoblin";
+const dbUser = process.env.POSTGRES_USER || "postgres";
+const dbPassword = process.env.POSTGRES_PASSWORD || "";
+const dbHost = process.env.POSTGRES_HOST || "localhost";
 
 var sequelize;
 
-if (process.env.DATABASE_HOST) {
+if (process.env.POSTGRES_HOST) {
   sequelize = new Sequelize(dbHost);
 } else {
   sequelize = new Sequelize(dbName, dbUser, dbPassword, {
