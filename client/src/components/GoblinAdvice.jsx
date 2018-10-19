@@ -36,7 +36,7 @@ class GoblinAdvice extends React.Component {
     return (
       <Wrapper data-test="goblin-advice">
         <HorizontalLine />
-        <img src="../images/goblin.png" alt="goblinPicture" height="150" />
+        <img src="../images/goblin.png" alt="goblin-picture" height="150" />
         <h2>Careful! Think twice about making this purchase</h2>
         <HorizontalLine />
         <PWrapper>

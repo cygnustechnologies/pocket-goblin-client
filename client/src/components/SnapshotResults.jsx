@@ -29,6 +29,35 @@ const Hr = styled("hr")`
   width: ${props => (props.width ? props.width : "100%")};
 `;
 
+const HrWithWidth = styled("hr")`
+  border: 1px solid rgba(128, 128, 128, 0.1);
+  width: 50%;
+`;
+
+const PayDebtInvestItOption = styled("button")`
+  background-color: rgb(163, 209, 167);
+`;
+
+const CashFlowMeterDiv = styled("div")`
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+`;
+
+const CashFlowHeader = styled("h2")`
+  margin-right: 30px;
+`;
+
+const WhatWouldTheGoblinDo = styled("button")`
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  width: 180px;
+  height: 40px;
+  padding: 4px;
+`;
+
 class SnapshotResults extends React.Component {
   constructor(props) {
     super(props);
@@ -108,31 +137,30 @@ class SnapshotResults extends React.Component {
     return (
       <Wrapper data-test="snapshot-results">
         <h1>Tap to Modify</h1>
-        <Hr width="50%" />
+        <HrWithWidth />
         <InputAmount
           data-test="input-amount"
           handlePurchaseInput={handlePurchaseInput}
           purchaseAmount={purchaseAmount}
         />
-        <Hr width="50%" />
+        <HrWithWidth />
         <h2>What if you spend the money...</h2>
-        <div style={{ margin: "0" }}>
-          <h3>Cash Flow</h3>
+        <CashFlowMeterDiv>
+          <CashFlowHeader>Cash Flow</CashFlowHeader>
           <CashFlowMeter
             data-test="cash-flow-meter"
             currentCashFlowAmount={currentCashFlowAmount}
             purchaseAmount={purchaseAmount}
           />
-        </div>
+        </CashFlowMeterDiv>
         <div>
           <HorizontalBar
             data-test="horizontal-bar"
             data={DebtSavingGraph}
             options={DebtSavingGraphOptions}
-            style={{ width: "60%", height: "100%" }}
           />
         </div>
-        <Hr width="50%" />
+        <HrWithWidth />
         <WhatIfContainer>
           <div>
             {purchasePaymentType === "credit" ? (
@@ -143,20 +171,20 @@ class SnapshotResults extends React.Component {
               />
             ) : null}
             <Hr />
-            <div style={{ textAlign: "center" }}>
+            <div>
               <h2>Or, what if you instead...</h2>
-              <button
+              <PayDebtInvestItOption
                 value="debt"
                 onClick={this.handlePayDebtOrInvestSelection}
               >
                 Pay Debt
-              </button>
-              <button
+              </PayDebtInvestItOption>
+              <PayDebtInvestItOption
                 value="invest"
                 onClick={this.handlePayDebtOrInvestSelection}
               >
                 Invest it
-              </button>
+              </PayDebtInvestItOption>
 
               <PayDebtOrInvestIt
                 data-test="pay-debt-or-investIt"
@@ -175,7 +203,7 @@ class SnapshotResults extends React.Component {
           </div>
         </WhatIfContainer>
         <Link to="/goblin-advice">
-          <button>What Would the Goblin Do?</button>
+          <WhatWouldTheGoblinDo>What Would the Goblin Do?</WhatWouldTheGoblinDo>
         </Link>
       </Wrapper>
     );

@@ -43,12 +43,16 @@ const CashFlowMeterDiv = styled("div")`
   flex-direction: row;
 `;
 
+const CashFlowHeader = styled("h2")`
+  margin-right: 30px;
+`;
+
 const PayInCash = styled("input")`
   margin-left: 30px;
 `;
 
-const HorizontalLine = styled("hr")`
-  border: 2px solid rgba(178, 181, 186, 0.3);
+const Hr = styled("hr")`
+  border: 1px solid rgba(128, 128, 128, 0.1);
   width: 70%;
 `;
 
@@ -70,23 +74,23 @@ class EnterPurchase extends React.Component {
 
     return (
       <Wrapper data-test="enter-purchase">
-        <HorizontalLine />
+        <Hr />
         <h1>Purchase Amount</h1>
-        <HorizontalLine />
+        <Hr />
         <InputAmount
           data-test="input-amount"
           handlePurchaseInput={handlePurchaseInput}
           purchaseAmount={purchaseAmount}
         />
         <CashFlowMeterDiv>
-          <h2 style={{ marginRight: "30px" }}>Cash Flow</h2>
+          <CashFlowHeader>Cash Flow</CashFlowHeader>
           <CashFlowMeter
             data-test="cash-flow-meter"
             currentCashFlowAmount={currentCashFlowAmount}
             purchaseAmount={purchaseAmount}
           />
         </CashFlowMeterDiv>
-        <HorizontalLine />
+        <Hr />
         <RepeatPurchaseFrequencySelecterDiv>
           Repeat:
           <RepeatPurchaseFrequencySelecterOption
@@ -98,7 +102,7 @@ class EnterPurchase extends React.Component {
             <option value="monthly">Monthly</option>
           </RepeatPurchaseFrequencySelecterOption>
         </RepeatPurchaseFrequencySelecterDiv>
-        <HorizontalLine />
+        <Hr />
         <CashCreditOption>
           <input
             name="paymentType"
@@ -117,7 +121,7 @@ class EnterPurchase extends React.Component {
           />
           Pay with Credit
         </CashCreditOption>
-        <HorizontalLine />
+        <Hr />
         <Link to="/snapshot-results">
           <StartTheGoblin>Start the Goblin!</StartTheGoblin>
         </Link>
