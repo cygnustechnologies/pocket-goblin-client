@@ -19,12 +19,12 @@ const CashCreditOption = styled("div")`
   margin-bottom: 5%;
 `;
 
-const RepeatPurchaseFrequencySelecterDiv = styled("div")`
+const RepeatPurchaseFrequencySelectorDiv = styled("div")`
   margin: 5%;
   margin-left: 2%;
 `;
 
-const RepeatPurchaseFrequencySelecterOption = styled("select")`
+const RepeatPurchaseFrequencySelectorOption = styled("select")`
   margin-left: 30px;
 `;
 
@@ -91,17 +91,17 @@ class EnterPurchase extends React.Component {
           />
         </CashFlowMeterDiv>
         <Hr />
-        <RepeatPurchaseFrequencySelecterDiv>
+        <RepeatPurchaseFrequencySelectorDiv>
           Repeat:
-          <RepeatPurchaseFrequencySelecterOption
+          <RepeatPurchaseFrequencySelectorOption
             value={purchaseFrequency}
             onBlur={handlePurchaseFrequencyChange}
             onChange={handlePurchaseFrequencyChange}
           >
             <option value="never">Never</option>
             <option value="monthly">Monthly</option>
-          </RepeatPurchaseFrequencySelecterOption>
-        </RepeatPurchaseFrequencySelecterDiv>
+          </RepeatPurchaseFrequencySelectorOption>
+        </RepeatPurchaseFrequencySelectorDiv>
         <Hr />
         <CashCreditOption>
           <input

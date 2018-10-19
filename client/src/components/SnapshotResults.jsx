@@ -187,7 +187,7 @@ class SnapshotResults extends React.Component {
               </PayDebtInvestItOption>
 
               <PayDebtOrInvestIt
-                data-test="pay-debt-or-investIt"
+                data-test="pay-debt-or-invest-it"
                 debtFreeFasterBy={this.state.debtFreeFasterBy}
                 interestSavedAmount={this.state.interestSavedAmount}
                 totalSavedAmount={this.state.totalSavedAmount}

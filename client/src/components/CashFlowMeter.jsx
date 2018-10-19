@@ -2,7 +2,7 @@ import React from "react";
 import styled from "react-emotion";
 
 //Styled Components
-const StopLightBottonSpacing = styled("div")`
+const StopLightSpacing = styled("div")`
   marginbottom: 2%;
 `;
 
@@ -53,9 +53,9 @@ const CashFlowMeter = props => {
   };
 
   return (
-    <StopLightBottonSpacing>
+    <StopLightSpacing>
       {stopLight(props.currentCashFlowAmount - props.purchaseAmount)}
-    </StopLightBottonSpacing>
+    </StopLightSpacing>
   );
 };
 
