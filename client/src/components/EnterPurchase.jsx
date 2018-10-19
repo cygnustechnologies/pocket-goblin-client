@@ -7,9 +7,53 @@ import CashFlowMeter from "./CashFlowMeter.jsx";
 //Styled Components
 const Wrapper = styled("div")`
   display: flex;
+  max-width: 750px;
   flex-direction: column;
   align-items: center;
   text-align: center;
+`;
+
+const CashCreditOption = styled("div")`
+  display: flex;
+  margin: 2%;
+  margin-bottom: 5%;
+`;
+
+const RepeatPurchaseFrequencySelectorDiv = styled("div")`
+  margin: 5%;
+  margin-left: 2%;
+`;
+
+const RepeatPurchaseFrequencySelectorOption = styled("select")`
+  margin-left: 30px;
+`;
+
+const StartTheGoblin = styled("button")`
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  width: 150px;
+  height: 40px;
+`;
+
+const CashFlowMeterDiv = styled("div")`
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+`;
+
+const CashFlowHeader = styled("h2")`
+  margin-right: 30px;
+`;
+
+const PayInCash = styled("input")`
+  margin-left: 30px;
+`;
+
+const Hr = styled("hr")`
+  border: 1px solid rgba(128, 128, 128, 0.1);
+  width: 70%;
 `;
 
 class EnterPurchase extends React.Component {
@@ -29,32 +73,37 @@ class EnterPurchase extends React.Component {
     } = this.props;
 
     return (
-      <Wrapper>
+      <Wrapper data-test="enter-purchase">
+        <Hr />
         <h1>Purchase Amount</h1>
+        <Hr />
         <InputAmount
+          data-test="input-amount"
           handlePurchaseInput={handlePurchaseInput}
           purchaseAmount={purchaseAmount}
         />
-        <div>
-          <h2>Cash Flow</h2>
+        <CashFlowMeterDiv>
+          <CashFlowHeader>Cash Flow</CashFlowHeader>
           <CashFlowMeter
+            data-test="cash-flow-meter"
             currentCashFlowAmount={currentCashFlowAmount}
             purchaseAmount={purchaseAmount}
           />
-        </div>
-        <div style={{ margin: "2%" }}>
+        </CashFlowMeterDiv>
+        <Hr />
+        <RepeatPurchaseFrequencySelectorDiv>
           Repeat:
-          <select
+          <RepeatPurchaseFrequencySelectorOption
             value={purchaseFrequency}
             onBlur={handlePurchaseFrequencyChange}
             onChange={handlePurchaseFrequencyChange}
           >
             <option value="never">Never</option>
             <option value="monthly">Monthly</option>
-          </select>
-        </div>
-
-        <div style={{ margin: "2%", marginBottom: "2%" }}>
+          </RepeatPurchaseFrequencySelectorOption>
+        </RepeatPurchaseFrequencySelectorDiv>
+        <Hr />
+        <CashCreditOption>
           <input
             name="paymentType"
             type="radio"
@@ -63,7 +112,7 @@ class EnterPurchase extends React.Component {
             onChange={handlePaymentTypeChange}
           />
           Pay in Cash
-          <input
+          <PayInCash
             name="paymentType"
             type="radio"
             value="credit"
@@ -71,9 +120,10 @@ class EnterPurchase extends React.Component {
             onChange={handlePaymentTypeChange}
           />
           Pay with Credit
-        </div>
+        </CashCreditOption>
+        <Hr />
         <Link to="/snapshot-results">
-          <button>Start the Goblin!</button>
+          <StartTheGoblin>Start the Goblin!</StartTheGoblin>
         </Link>
       </Wrapper>
     );

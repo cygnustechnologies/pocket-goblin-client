@@ -1,4 +1,10 @@
 import React from "react";
+import styled from "react-emotion";
+
+const ColorSpan = styled("span")`
+  color: red;
+  margin-left: 15px;
+`;
 
 class RealCostOfCredit extends React.Component {
   constructor(props) {
@@ -40,9 +46,17 @@ class RealCostOfCredit extends React.Component {
       return (
         <div>
           {title}
-          <h4>Time to Pay Off: {monthsToPayOff} months</h4>
-          <h4>{`Interest You'll Pay: $${nonRecurringInterest}`}</h4>
-          <h4>Total Cost after Paying it off: ${totalCostOfDebt}</h4>
+          <h4>
+            Time to Pay Off: <ColorSpan>{monthsToPayOff} months</ColorSpan>
+          </h4>
+          <h4>
+            {`Interest You'll Pay`}:{" "}
+            <ColorSpan>${nonRecurringInterest}</ColorSpan>
+          </h4>
+          <h4>
+            Total Cost after Paying it off:{" "}
+            <ColorSpan>${totalCostOfDebt}</ColorSpan>
+          </h4>
           <p>
             {`Based on your current spending pattern, you should pay this off after ${monthsToPayOff} months. 
             You will pay $${nonRecurringInterest} in interest alone! The total cost of making this purchase 
@@ -54,12 +68,18 @@ class RealCostOfCredit extends React.Component {
       return (
         <div>
           {title}
-          <h4>Total Amount of Payments per year ${totalYearlyPayments}</h4>
           <h4>
-            {`Interest You'll Pay Per Year: $
-      ${totalYearlyInterest}`}
+            Total Amount of Payments per year{" "}
+            <ColorSpan>${totalYearlyPayments}</ColorSpan>
           </h4>
-          <h4>Total Amount you will pay per year: ${totalYearlyCost}</h4>
+          <h4>
+            {`Interest You'll Pay Per Year:`}{" "}
+            <ColorSpan>${totalYearlyInterest}</ColorSpan>
+          </h4>
+          <h4>
+            Total Amount you will pay per year:{" "}
+            <ColorSpan>${totalYearlyCost}</ColorSpan>
+          </h4>
           <p>
             {`Based on your current spending pattern, it will take you
             ${monthsToPayOff} months to pay off every payment you

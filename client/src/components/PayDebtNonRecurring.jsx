@@ -1,11 +1,24 @@
 import React from "react";
+import styled from "react-emotion";
+
+const ColorSpan = styled("span")`
+  color: red;
+  margin-left: 15px;
+`;
 
 const PayDebtNonRecurring = props => {
   return (
     <div>
-      <h4>Be Debt-Free Faster by {props.debtFreeFasterBy} months</h4>
-      <h4>Save interest of ${props.interestSavedAmount}</h4>
-      <h4>{`Total You'll Save $${props.totalSavedAmount}`}</h4>
+      <h4>
+        Be Debt-Free Faster by{" "}
+        <ColorSpan>{props.debtFreeFasterBy} months</ColorSpan>{" "}
+      </h4>
+      <h4>
+        Save interest of <ColorSpan>${props.interestSavedAmount}</ColorSpan>{" "}
+      </h4>
+      <h4>
+        {`Total You'll Save`} <ColorSpan>${props.totalSavedAmount}</ColorSpan>
+      </h4>
       <p>
         {`If you choose to pay down debt with the $${props.purchaseAmount}
             rather than spend it today, you could save $${

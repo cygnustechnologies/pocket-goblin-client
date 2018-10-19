@@ -1,5 +1,11 @@
 import React from "react";
 import { calculateCompoundInterest } from "../helpers/finance";
+import styled from "react-emotion";
+
+const ColorSpan = styled("span")`
+  color: red;
+  margin-left: 15px;
+`;
 
 const InvestItRecurring = props => {
   //Since amounts recur monthly, currently, we need to make periods monthly
@@ -26,10 +32,20 @@ const InvestItRecurring = props => {
 
   return (
     <div>
-      <h4>Investment Timeline: {props.investmentTimeline} Years</h4>
-      <h4>Total Dollars Spent: ${totalSpend}</h4>
-      <h4>Interest You Would Earn: ${interestEarned}</h4>
-      <h4>Real Cost of Spending Today: ${totalEarnedIfInvested}</h4>
+      <h4>
+        Investment Timeline:{" "}
+        <ColorSpan>{props.investmentTimeline} Years</ColorSpan>
+      </h4>
+      <h4>
+        Total Dollars Spent: <ColorSpan>${totalSpend}</ColorSpan>
+      </h4>
+      <h4>
+        Interest You Would Earn: <ColorSpan>${interestEarned}</ColorSpan>
+      </h4>
+      <h4>
+        Real Cost of Spending Today:{" "}
+        <ColorSpan>${totalEarnedIfInvested}</ColorSpan>
+      </h4>
       <p>
         {`If you choose to invest the $${
           props.purchaseAmount

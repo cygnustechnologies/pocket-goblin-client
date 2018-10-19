@@ -21,6 +21,9 @@ injectGlobal`
     font-family: 'Arsenal', sans-serif; 
   }
 
+  * p {
+    text-align: justify;
+  }
 `;
 
 const Wrapper = styled("div")`

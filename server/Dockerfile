@@ -13,4 +13,5 @@ COPY . .
 
 LABEL maintainer="Carlos Astrada <carlosastrada@gmail.com>"
 
+# CMD ["node", "index.js"]
 CMD node index.js
