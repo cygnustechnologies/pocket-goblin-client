@@ -20,6 +20,19 @@ const APP_PORT = process.env.APP_PORT || 8000;
 const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 const AUTH0_CLIENT_SECRET = process.env.AUTH0_CLIENT_SECRET;
 
+//sync models
+if (process.env.NODE_ENV === "development") {
+  models.sequelize
+    // //use force:true to destroy data/tables before sync (ok for dev)
+    .sync({ force: true })
+    .catch(err => console.error(err));
+} else {
+  models.sequelize
+    // //use force:true to destroy data/tables before sync (ok for dev)
+    .sync()
+    .catch(err => console.error(err));
+}
+
 // PLAID API
 // We store the access_token in memory - in production, store it in a secure
 // persistent data store
