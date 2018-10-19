@@ -14,7 +14,7 @@ services:
   web:
     build: ./server
     # command: nodemon --inspect index.js
-    restart: always
+    # restart: always
     env_file:
       - '.env'
     ports:
@@ -28,7 +28,6 @@ services:
     ports:
       - '80:80'
     networks:
-      - front-tier
       - back-tier
 
 volumes:
@@ -36,4 +35,3 @@ volumes:
 
 networks:
   back-tier:
-  front-tier:
