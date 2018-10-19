@@ -1,5 +1,11 @@
 import React from "react";
 import { calculateCompoundInterest } from "../helpers/finance";
+import styled from "react-emotion";
+
+const ColorSpan = styled("span")`
+  color: red;
+  margin-left: 15px;
+`;
 
 const InvestItNonRecurring = props => {
   //Calculate using helper for a non-recurring amount
@@ -18,10 +24,16 @@ const InvestItNonRecurring = props => {
 
   return (
     <div>
-      <h4>Investment Timeline {props.investmentTimeline} Years</h4>
-      <h4>Interest You Would Earn ${interestEarned}</h4>
       <h4>
-        Real Cost of Spending Today ${props.purchaseAmount + interestEarned}
+        Investment Timeline{" "}
+        <ColorSpan>{props.investmentTimeline} Years</ColorSpan>
+      </h4>
+      <h4>
+        Interest You Would Earn <ColorSpan>${interestEarned}</ColorSpan>{" "}
+      </h4>
+      <h4>
+        Real Cost of Spending Today{" "}
+        <ColorSpan>${props.purchaseAmount + interestEarned}</ColorSpan>
       </h4>
       <p>
         {`If you choose to invest the $${props.purchaseAmount} rather than

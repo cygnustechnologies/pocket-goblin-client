@@ -7,6 +7,27 @@ const Titles = styled("h1")`
   text-align: center;
 `;
 
+const GraphWrapper = styled("div")`
+  height: 75%;
+  width: 75%;
+`;
+
+const HorizontalLine = styled("hr")`
+  border: 2px solid rgba(178, 181, 186, 0.3);
+  width: 100%;
+`;
+
+const TitleOptionMenu = styled("div")`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
+const OptionMenu = styled("select")`
+  height: 20px;
+  margin-top: 30px;
+`;
+
 const TopSpendingGraphs = ({ recurring, categories, shop }) => {
   const barGraphColors = [
     "rgb(146, 66, 244)",
@@ -64,38 +85,62 @@ const TopSpendingGraphs = ({ recurring, categories, shop }) => {
   };
 
   return (
-    <div style={{ height: "50%", width: "50%" }}>
-      <Titles>Top Recurring </Titles>
-      <select>
-        <option value="monthly">Monthly</option>
-      </select>
-      <HorizontalBar data={recurringGraph} options={options} />
+    <GraphWrapper data-test="top-spending-graphs">
+      <TitleOptionMenu>
+        <Titles>Top Recurring </Titles>
+        <OptionMenu>
+          <option value="monthly">Monthly</option>
+          <option value="weekly">Weekly</option>
+        </OptionMenu>
+      </TitleOptionMenu>
+      <HorizontalBar
+        data={recurringGraph}
+        options={options}
+        data-type="horizontal-bars"
+      />
       <p>
         Recurring expenses add up! Click on one to analyze how reducting it
         would help imporve your financial health.
       </p>
-      <Titles>Top Categories </Titles>
-      <select>
-        <option value="monthly">Monthly</option>
-      </select>
-      <HorizontalBar data={categoriesGraph} options={options} />
+      <HorizontalLine />
+      <TitleOptionMenu>
+        <Titles>Top Categories </Titles>
+        <OptionMenu>
+          <option value="monthly">Monthly</option>
+          <option value="weekly">Weekly</option>
+        </OptionMenu>
+      </TitleOptionMenu>
+
+      <HorizontalBar
+        data={categoriesGraph}
+        options={options}
+        data-type="horizontal-bars"
+      />
       <p>
         Category spending shows you genral trends. Most people can save tons of
         money be reducing the amount of money they spend at bars and
         restaurants.
       </p>
-      <Titles>Top Shop </Titles>
-      <select>
-        <option value="monthly">Monthly</option>
-      </select>
-      <HorizontalBar data={shopGraph} options={options} />
+      <HorizontalLine />
+      <TitleOptionMenu>
+        <Titles>Top Shop </Titles>
+        <OptionMenu>
+          <option value="monthly">Monthly</option>
+          <option value="weekly">Weekly</option>
+        </OptionMenu>
+      </TitleOptionMenu>
+      <HorizontalBar
+        data={shopGraph}
+        options={options}
+        data-type="horizontal-bars"
+      />
       <p>
         {`Watch out! That daily latte or impulsive Amazon purchase adds up! If you
         used that money to pay down debt or top up savings, you will be in far
         better shape! And let's be honest, I'll bet you wouldnt miss that shiny
         new gadget after a few months.`}
       </p>
-    </div>
+    </GraphWrapper>
   );
 };
 
